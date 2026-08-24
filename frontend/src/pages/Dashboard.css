@@ -1,0 +1,448 @@
+* {
+  box-sizing: border-box;
+}
+
+.dashboard-page {
+  min-height: 100vh;
+  background: #f7f6fb;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  color: #211d2b;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.dashboard-nav {
+  height: 72px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #ffffff;
+  border-bottom: 1px solid #ece9f1;
+}
+
+.dashboard-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #29243a;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.dashboard-brand-icon {
+  width: 36px;
+  height: 36px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  background: #7357e8;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.dashboard-main {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 48px 24px 60px;
+}
+
+/* =========================
+   WELCOME
+========================= */
+
+.welcome-section {
+  margin-bottom: 32px;
+}
+
+.welcome-section h1 {
+  margin: 0;
+
+  color: #211d2b;
+
+  font-size: 32px;
+  line-height: 1.2;
+
+  letter-spacing: -0.8px;
+}
+
+.welcome-section p {
+  margin: 9px 0 0;
+
+  color: #817b8d;
+
+  font-size: 14px;
+}
+
+/* =========================
+   DASHBOARD GRID
+========================= */
+
+.dashboard-grid {
+  display: grid;
+
+  grid-template-columns: 1.5fr 1fr;
+
+  gap: 22px;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.dashboard-card {
+  background: #ffffff;
+
+  border: 1px solid #ebe8f0;
+
+  border-radius: 18px;
+
+  padding: 28px;
+
+  box-shadow:
+    0 8px 30px rgba(38, 29, 60, 0.045);
+}
+
+.card-title {
+  margin: 0 0 24px;
+
+  color: #2c2737;
+
+  font-size: 17px;
+  font-weight: 650;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  margin-bottom: 28px;
+}
+
+.profile-avatar {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 16px;
+
+  background: #eeeaff;
+
+  color: #7357e8;
+
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.profile-name {
+  margin: 0;
+
+  color: #282333;
+
+  font-size: 18px;
+  font-weight: 650;
+}
+
+.profile-email {
+  margin: 5px 0 0;
+
+  color: #8c8697;
+
+  font-size: 13px;
+}
+
+/* =========================
+   ACCOUNT DETAILS
+========================= */
+
+.account-details {
+  display: flex;
+  flex-direction: column;
+
+  gap: 0;
+}
+
+.account-row {
+  min-height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid #f0edf4;
+}
+
+.account-label {
+  color: #898394;
+
+  font-size: 13px;
+}
+
+.account-value {
+  color: #383241;
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.login-method {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 6px 10px;
+
+  border-radius: 20px;
+
+  background: #f1edff;
+
+  color: #7357e8;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.method-dot {
+  width: 6px;
+  height: 6px;
+
+  border-radius: 50%;
+
+  background: #7357e8;
+}
+
+/* =========================
+   STATUS CARD
+========================= */
+
+.status-card {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  min-height: 250px;
+}
+
+.status-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.status-icon {
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 14px;
+
+  background: #eeeaff;
+
+  color: #7357e8;
+
+  font-size: 20px;
+}
+
+.status-label {
+  margin: 0 0 7px;
+
+  color: #8b8497;
+
+  font-size: 12px;
+}
+
+.status-title {
+  margin: 0;
+
+  color: #292433;
+
+  font-size: 21px;
+  font-weight: 650;
+}
+
+.status-description {
+  margin: 12px 0 0;
+
+  color: #898394;
+
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================
+   LOGOUT
+========================= */
+
+.logout-button {
+  width: 100%;
+  height: 46px;
+
+  margin-top: 28px;
+
+  border: 1px solid #e1dce8;
+  border-radius: 10px;
+
+  background: #ffffff;
+
+  color: #4b4555;
+
+  font-size: 13px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+.logout-button:hover {
+  background: #fff5f5;
+
+  border-color: #f0cccc;
+
+  color: #c94a4a;
+}
+
+/* =========================
+   LOADING / ERROR
+========================= */
+
+.dashboard-loading {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7f6fb;
+
+  color: #7357e8;
+
+  font-size: 15px;
+}
+
+.dashboard-error {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f7f6fb;
+
+  color: #c94a4a;
+
+  font-size: 15px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+  .dashboard-nav {
+    padding: 0 24px;
+  }
+
+  .dashboard-main {
+    padding-top: 36px;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-nav {
+    height: 64px;
+    padding: 0 18px;
+  }
+
+  .dashboard-main {
+    padding: 30px 16px 40px;
+  }
+
+  .welcome-section h1 {
+    font-size: 27px;
+  }
+
+  .dashboard-card {
+    padding: 22px;
+  }
+
+  .account-row {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    padding: 13px 0;
+  }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.dashboard-footer {
+  margin-top: 55px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+
+  color: #9a94a5;
+
+  font-size: 12px;
+}
+
+.dashboard-footer a {
+  color: #7357e8;
+  text-decoration: none;
+  font-weight: 600;
+
+  transition: color 0.2s ease;
+}
+
+.dashboard-footer a:hover {
+  color: #5f45d0;
+  text-decoration: underline;
+}
+
+.footer-separator {
+  color: #c5c0cc;
+}
