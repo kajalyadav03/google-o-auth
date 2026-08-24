@@ -22,7 +22,7 @@ function Login() {
 
     try {
       const response = await fetch(
-        "http://localhost:8000/api/auth/login",
+        "https://google-o-auth-moel.onrender.com/api/auth/login",
         {
           method: "POST",
           headers: {
@@ -49,7 +49,7 @@ function Login() {
 
   const handleGoogleLogin = () => {
     window.location.href =
-      "http://localhost:8000/api/auth/google";
+  "https://google-o-auth-moel.onrender.com/api/auth/google";
   };
 
   return (

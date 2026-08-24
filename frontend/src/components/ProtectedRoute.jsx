@@ -9,7 +9,7 @@ function ProtectedRoute({ children }) {
     const checkAuthentication = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/auth/me",
+          "https://google-o-auth-moel.onrender.com/api/auth/me",
           {
             method: "GET",
             credentials: "include",

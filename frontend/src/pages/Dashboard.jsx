@@ -9,7 +9,7 @@ function Dashboard() {
     const getUser = async () => {
       try {
         const response = await fetch(
-          "http://localhost:8000/api/auth/me",
+          "https://google-o-auth-moel.onrender.com/api/auth/me",
           {
             credentials: "include",
           }
@@ -35,7 +35,7 @@ function Dashboard() {
   const handleLogout = async () => {
     try {
       const response = await fetch(
-        "http://localhost:8000/api/auth/logout",
+        "https://google-o-auth-moel.onrender.com/api/auth/logout",
         {
           method: "POST",
           credentials: "include",
