@@ -1,5 +1,6 @@
 const express = require("express");
 const passport = require("../config/passport");
+const generateToken = require("../utils/generateToken");
 
 const {
   loginUser,
@@ -8,20 +9,29 @@ const {
 } = require("../controllers/authController");
 
 const protect = require("../middleware/authMiddleware");
-const generateToken = require("../utils/generateToken");
 
 const router = express.Router();
 
-// Normal Login
+// ===============================
+// Normal Authentication
+// ===============================
+
 router.post("/login", loginUser);
 
-// Logout
 router.post("/logout", logoutUser);
 
-// Current logged-in user
+
+// ===============================
+// Get Logged-in User
+// ===============================
+
 router.get("/me", protect, getMe);
 
+
+// ===============================
 // Google OAuth
+// ===============================
+
 router.get(
   "/google",
   passport.authenticate("google", {
@@ -29,17 +39,28 @@ router.get(
   })
 );
 
-// Google OAuth callback
+
+// ===============================
+// Google OAuth Callback
+// ===============================
+
 router.get(
   "/google/callback",
+
   passport.authenticate("google", {
     session: false,
-failureRedirect: "https://google-o-auth-1.onrender.com/login",
+
+    // If Google authentication fails
+    failureRedirect:
+      "https://google-o-auth-1.onrender.com/#/login",
   }),
+
   (req, res) => {
     try {
+      // Generate JWT
       const token = generateToken(req.user._id);
 
+      // Store JWT in secure cookie
       res.cookie("token", token, {
         httpOnly: true,
         secure: true,
@@ -47,13 +68,22 @@ failureRedirect: "https://google-o-auth-1.onrender.com/login",
         maxAge: 7 * 24 * 60 * 60 * 1000,
       });
 
-      res.redirect("https://google-o-auth-1.onrender.com/dashboard");
+      // Successful Google login
+      res.redirect(
+        "https://google-o-auth-1.onrender.com/#/dashboard"
+      );
+
     } catch (error) {
+
       console.error("Google callback error:", error);
 
-res.redirect("https://google-o-auth-1.onrender.com/login");
+      // If something goes wrong
+      res.redirect(
+        "https://google-o-auth-1.onrender.com/#/login"
+      );
     }
   }
 );
+
 
 module.exports = router;
