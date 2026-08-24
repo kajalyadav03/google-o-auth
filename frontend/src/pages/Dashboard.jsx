@@ -35,7 +35,8 @@ function Dashboard() {
   const handleLogout = async () => {
     try {
       const response = await fetch(
-        "https://google-o-auth-moel.onrender.com/api/auth/logout",
+        "https://google-o-auth-moel.onrender.com/api/auth/logout"
+        ,
         {
           method: "POST",
           credentials: "include",
@@ -43,7 +44,7 @@ function Dashboard() {
       );
 
       if (response.ok) {
-        window.location.href = "/login";
+        window.location.href = "/#/login";
       }
     } catch (error) {
       console.error(error);
