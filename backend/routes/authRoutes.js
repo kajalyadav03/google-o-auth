@@ -47,11 +47,11 @@ router.get(
         maxAge: 7 * 24 * 60 * 60 * 1000,
       });
 
-      res.redirect("http://localhost:5173/dashboard");
+      res.redirect("https://google-o-auth-1.onrender.com/dashboard");
     } catch (error) {
       console.error("Google callback error:", error);
 
-      res.redirect("http://localhost:5173/login");
+res.redirect("https://google-o-auth-1.onrender.com/login");
     }
   }
 );
